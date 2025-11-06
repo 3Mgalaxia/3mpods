@@ -5,6 +5,15 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
+type IgniteProduct = {
+  name: string;
+  tag: string;
+  price: string;
+  flavors: string[];
+  image?: string;
+  imageAlt?: string;
+};
+
 const defaultIgniteFlavors = [
   "Icy Mint",
   "Pineapple Ice",
@@ -88,7 +97,7 @@ const hexToRgba = (hex: string, alpha: number): string => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
-const igniteProducts = [
+const igniteProducts: IgniteProduct[] = [
   {
     name: "Ignite V120",
     tag: "V120",
